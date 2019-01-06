@@ -1,0 +1,1 @@
+category-loop.blade.php

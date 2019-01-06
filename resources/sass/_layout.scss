@@ -1,0 +1,46 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+ul {
+    padding: 0;
+    list-style: none;
+}
+a {
+    color: inherit;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+h1 {}
+h2 {}
+h3 {}
+h4 {}
+h5 {}
+h6 {}
+
+
+html, body {
+    margin: 0;
+    font-family: ProximaNovaTThin;
+    font-size: 13px;
+    color: $color-main;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+	max-width: 1280px;
+}
+
+.breadcrumbs {
+    padding: 15px 0 10px;
+    & a, & span {
+        text-decoration: none;
+    }
+    & span {
+        cursor: default;
+    }
+}

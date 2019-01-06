@@ -22,6 +22,8 @@ Route::match(['get'], '/', function () {
     return view('page-front');
 })->name('page-front');
 
+Route::resource('profile/pages', 'PageProfileController');
+
 Route::match(
     ['get'],
     'catalog/{category_slug}/{product_slug?}',

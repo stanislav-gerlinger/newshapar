@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\View;
 use App\Models\Page;
 use Illuminate\Http\Request;
 
-class PageProfileController extends Controller
+class ProfilePageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,8 @@ class PageProfileController extends Controller
      */
     public function index()
     {
-        if (View::exists('profile/product-list')) return view('profile/product-list');
+        $pages = Page::all();
+        if (View::exists('profile/page-index')) return view('profile/page-index', ['pages' => $pages]);
     }
 
     /**
@@ -25,7 +26,7 @@ class PageProfileController extends Controller
      */
     public function create()
     {
-        if (View::exists('profile/product-edit')) return view('profile/product-edit');
+        if (View::exists('profile/page-create')) return view('profile/page-create');
     }
 
     /**
@@ -36,8 +37,17 @@ class PageProfileController extends Controller
      */
     public function store(Request $request)
     {
-        return 'Сохранение списка товаров';
-        // print_r($request);
+        $page = new Page;
+        $editable_fields = ['title', 'name', 'description', 'content'];
+        $data = $request->all();
+        foreach ($editable_fields as $fname) {
+            if (isset($data[$fname])) {
+                $page->$fname = $data[$fname];
+            }
+        }
+        $res = $page->save();
+        var_dump($res);
+        return redirect($request->path());
     }
 
     /**
@@ -48,7 +58,7 @@ class PageProfileController extends Controller
      */
     public function show(Page $page)
     {
-        if (View::exists('profile/product-show')) return view('profile/product-show', ['page' => $page]);
+        if (View::exists('profile/page-show')) return view('profile/page-show', ['page' => $page]);
     }
 
     /**
@@ -59,7 +69,7 @@ class PageProfileController extends Controller
      */
     public function edit(Page $page)
     {
-        if (View::exists('profile/product-edit')) return view('profile/product-edit');
+        if (View::exists('profile/page-edit')) return view('profile/page-edit', ['page' => $page]);
     }
 
     /**
@@ -71,7 +81,19 @@ class PageProfileController extends Controller
      */
     public function update(Request $request, Page $page)
     {
-        return 'Обработка edit';
+        $editable_fields = [
+            'title', 'name', 'description', 'content'
+        ];
+        $data = $request->all();
+        foreach ($editable_fields as $fname) {
+            if (isset($data[$fname])) {
+                $page->$fname = $data[$fname];
+            }
+        }
+        $res = $page->save();
+        var_dump($res);
+        
+        return redirect($request->path());
     }
 
     /**

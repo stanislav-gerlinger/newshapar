@@ -210,3 +210,8 @@ body {
   height: 12px;
 }
 
+main {
+  border: 1px solid black;
+  padding: 30px;
+}
+

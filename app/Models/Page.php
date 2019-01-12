@@ -11,6 +11,8 @@ class Page extends Model
 
     protected $connection = 'mysql';
     protected $table = 'pages';
+    protected $primaryKey = 'ID';
     protected $dateFormat = 'Y-m-d H:i:s';
     public $timestamps = true;
+    protected $fillable = ['title'];
 }

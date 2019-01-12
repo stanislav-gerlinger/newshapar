@@ -22,7 +22,7 @@ Route::match(['get'], '/', function () {
     return view('page-front');
 })->name('page-front');
 
-Route::resource('profile/page', 'PageProfileController');
+Route::resource('profile/pages', 'PageProfileController');
 
 Route::match(
     ['get'],

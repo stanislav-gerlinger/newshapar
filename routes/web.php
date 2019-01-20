@@ -18,18 +18,28 @@
 // 	return redirect()->back();
 // });
 
-Route::match(['get'], '/', function () {
-    return view('page-front');
-})->name('page-front');
+Route::get('/', function () {
+    return view('index');
+});
+Route::any('test/{product_slug?}', 'TestController@router');
 
+Route::any('catalog/{category_slug}/{product_slug?}', 'CatalogController@router')
+    ->where('category_slug', '[a-z\-]+')
+    ->where('product_slug', '[a-z\-]+')
+    ->name('catalog');
+Route::any('products', 'ProductController@router')->name('products');
+Route::any('yarn', 'YarnController@router')->name('yarn');
+
+Route::any('profile', 'ProfileController@router')->name('profile');
 Route::resource('profile/pages', 'ProfilePageController');
 
-Route::match(
-    ['get'],
-    'catalog/{category_slug}/{product_slug?}',
-    'CatalogController@route'
-)->where('category_slug', '[a-z\-]+')->where('product_slug', '[a-z\-]+');
-
-// Route::match(['get'], '{slug}', 'PageController@view');
-
-// Route::get('/home', 'HomeController@index')->name('home');
+//Route::get($uri, $callback);
+//Route::post($uri, $callback);
+//Route::put($uri, $callback);
+//Route::patch($uri, $callback);
+//Route::delete($uri, $callback);
+//Route::options($uri, $callback);
+//Route::match(Array $methods, $uri, $callback);
+//Route::any($uri, $callback);
+//Route::any('test/{var1}/{var2}', function($var1, $var2){  });
+//{{ csrf_field() }}

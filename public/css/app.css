@@ -226,11 +226,8 @@ main {
   padding: 30px;
 }
 
-.menu {
-  border: 0;
-}
-
 .menu li {
   display: inline-block;
+  margin-right: 15px;
 }
 

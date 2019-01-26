@@ -15,7 +15,7 @@ class DictionaryEditController extends Controller
      */
     public function index()
     {
-        //
+        return view('profile/dictionaries/index');
     }
 
     /**

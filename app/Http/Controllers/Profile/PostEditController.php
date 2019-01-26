@@ -15,7 +15,7 @@ class PostEditController extends Controller
      */
     public function index()
     {
-        //
+        return view('profile/posts/index');
     }
 
     /**

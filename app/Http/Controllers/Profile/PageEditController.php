@@ -15,7 +15,7 @@ class PageEditController extends Controller
      */
     public function index()
     {
-        echo 'index';
+        return view('profile/pages/index');
     }
 
     /**

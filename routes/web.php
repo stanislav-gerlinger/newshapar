@@ -15,7 +15,6 @@
 Route::get('/', function () {
     return view('index');
 });
-Route::any('test/{product_slug?}', 'TestController@router');
 
 Route::any('catalog/{category_slug}/{product_slug?}', 'CatalogController@router')
     ->where('category_slug', '[a-z\-]+')
@@ -25,7 +24,15 @@ Route::any('products', 'ProductController@router')->name('products');
 Route::any('yarn', 'YarnController@router')->name('yarn');
 
 Route::any('profile', 'ProfileController@router')->name('profile');
-Route::resource('profile/pages', 'ProfilePageController');
+
+
+// profile
+Route::resource('profile/posts', 'Profile\PostEditController');
+Route::resource('profile/products', 'Profile\ProductEditController');
+Route::resource('profile/yarns', 'Profile\YarnEditController');
+Route::resource('profile/pages', 'Profile\PageEditController');
+Route::resource('profile/dictionaries', 'Profile\DictionaryEditController');
+
 
 Auth::routes();
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
@@ -33,6 +40,8 @@ Route::get('/logout', function () {
     Auth::logout();
     return redirect()->back();
 });
+
+Route::any('test/{product_slug?}', 'TestController@router');
 
 //Route::get($uri, $callback);
 //Route::post($uri, $callback);

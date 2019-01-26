@@ -14,13 +14,13 @@
 			<h1>Все страницы</h1>
 			<main>
                 <a href="/profile/pages/create">Новая страница</a>
-                <?foreach($pages as $page){?>
-                <div>
-                    <span><?=$page->title?></span>  
-                    <a href="/profile/pages/{{ $page->ID }}">Просмотр</a>
-                    <a href="/profile/pages/{{ $page->ID }}/edit">Редактирование</a>
-                </div>
-                <?}?>
+                @foreach ($pages as $page)
+                    <div>
+                        <span>{{ $page->title }}</span>  
+                        <a href="/profile/pages/{{ $page->ID }}">Просмотр</a>
+                        <a href="/profile/pages/{{ $page->ID }}/edit">Редактирование</a>
+                    </div>
+                @endforeach
             </main>
 		</div>
 	</section>

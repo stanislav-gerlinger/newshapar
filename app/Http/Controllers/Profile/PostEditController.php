@@ -1,12 +1,23 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Profile;
 
-use App\Models\Directory_element;
+use App\Models\Post;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class DirectoryElementController extends Controller
+class PostEditController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        //
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -14,7 +25,7 @@ class DirectoryElementController extends Controller
      */
     public function create()
     {
-        echo __METHOD__;
+        //
     }
 
     /**
@@ -29,24 +40,35 @@ class DirectoryElementController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Display the specified resource.
      *
-     * @param  \App\Models\Directory_element  $directory_element
+     * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function edit(Directory_element $directory_element)
+    public function show(Post $post)
     {
-        echo __METHOD__;
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Post  $post
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Post $post)
+    {
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Directory_element  $directory_element
+     * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Directory_element $directory_element)
+    public function update(Request $request, Post $post)
     {
         //
     }
@@ -54,10 +76,10 @@ class DirectoryElementController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Directory_element  $directory_element
+     * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Directory_element $directory_element)
+    public function destroy(Post $post)
     {
         //
     }

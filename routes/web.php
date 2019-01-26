@@ -23,6 +23,10 @@ Route::match(['get'], '/', function () {
 })->name('page-front');
 
 Route::resource('profile/pages', 'ProfilePageController');
+Route::resource('profile/directories', 'DirectoryController');
+// Route::resource('profile/directories/elements', 'DirectoryElementController', ['except' => [
+//     'index', 'show'
+// ]]);
 
 Route::match(
     ['get'],

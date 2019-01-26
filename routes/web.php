@@ -23,16 +23,17 @@ Route::any('catalog/{category_slug}/{product_slug?}', 'CatalogController@router'
 Route::any('products', 'ProductController@router')->name('products');
 Route::any('yarn', 'YarnController@router')->name('yarn');
 
-Route::any('profile', 'ProfileController@router')->name('profile');
 
 
 // profile
+Route::any('profile', function () {
+    return view('profile/index');
+});
 Route::resource('profile/posts', 'Profile\PostEditController');
 Route::resource('profile/products', 'Profile\ProductEditController');
-Route::resource('profile/yarns', 'Profile\YarnEditController');
+Route::resource('profile/yarn', 'Profile\YarnEditController');
 Route::resource('profile/pages', 'Profile\PageEditController');
 Route::resource('profile/dictionaries', 'Profile\DictionaryEditController');
-
 
 Auth::routes();
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');

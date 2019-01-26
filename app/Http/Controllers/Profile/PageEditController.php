@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Profile;
 
-use App\Models\Yarn;
+use App\Models\Page;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class YarnEditController extends Controller
+class PageEditController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class YarnEditController extends Controller
      */
     public function index()
     {
-        return view('profile/yarn/index');
+        return view('profile/pages/index');
     }
 
     /**
@@ -25,7 +25,7 @@ class YarnEditController extends Controller
      */
     public function create()
     {
-        //
+        echo 'create';
     }
 
     /**
@@ -36,51 +36,51 @@ class YarnEditController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        echo 'store';
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Yarn  $yarn
+     * @param  \App\Models\Page  $page
      * @return \Illuminate\Http\Response
      */
-    public function show(Yarn $yarn)
+    public function show(Page $page)
     {
-        //
+        echo 'show';
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Yarn  $yarn
+     * @param  \App\Models\Page  $page
      * @return \Illuminate\Http\Response
      */
-    public function edit(Yarn $yarn)
+    public function edit(Page $page)
     {
-        //
+        echo 'edit';
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Yarn  $yarn
+     * @param  \App\Models\Page  $page
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Yarn $yarn)
+    public function update(Request $request, Page $page)
     {
-        //
+        echo 'update';
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Yarn  $yarn
+     * @param  \App\Models\Page  $page
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Yarn $yarn)
+    public function destroy(Page $page)
     {
-        //
+        echo 'destroy';
     }
 }

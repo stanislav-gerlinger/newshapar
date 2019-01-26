@@ -72,6 +72,16 @@ body {
   color: #777d8b;
 }
 
+header {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+footer {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -211,7 +221,16 @@ body {
 }
 
 main {
-  border: 1px solid black;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
   padding: 30px;
+}
+
+.menu {
+  border: 0;
+}
+
+.menu li {
+  display: inline-block;
 }
 

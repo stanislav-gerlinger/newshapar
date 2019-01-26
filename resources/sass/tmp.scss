@@ -1,4 +1,11 @@
 main {
-    border: 1px solid black;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
     padding:30px;
+}
+.menu {
+    border: 0;
+    & li {
+        display: inline-block;
+    }
 }

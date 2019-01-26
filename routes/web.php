@@ -12,12 +12,6 @@
 */
 // get, post, put, patch, delete, options
 
-// Auth::routes();
-// Route::get('/logout', function () {
-// 	Auth::logout();
-// 	return redirect()->back();
-// });
-
 Route::get('/', function () {
     return view('index');
 });
@@ -32,6 +26,13 @@ Route::any('yarn', 'YarnController@router')->name('yarn');
 
 Route::any('profile', 'ProfileController@router')->name('profile');
 Route::resource('profile/pages', 'ProfilePageController');
+
+Auth::routes();
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+Route::get('/logout', function () {
+    Auth::logout();
+    return redirect()->back();
+});
 
 //Route::get($uri, $callback);
 //Route::post($uri, $callback);

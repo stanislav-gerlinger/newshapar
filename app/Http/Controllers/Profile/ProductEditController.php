@@ -15,7 +15,8 @@ class ProductEditController extends Controller
      */
     public function index()
     {
-        return view('profile/products/index');
+        $products = Product::all();
+        return view('profile/products/index', ['products' => $products]);
     }
 
     /**
@@ -36,7 +37,7 @@ class ProductEditController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
@@ -79,8 +80,15 @@ class ProductEditController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy(Product $product, Request $request)
     {
-        //
+        if($request->ajax()){
+            // return $request->id;
+            $q = Product::find($request->id)->delete();
+            $response = ['status' => $q, 'id' => $request->id];
+            return json_encode($response);
+
+            // return json_encode($request);
+        }
     }
 }

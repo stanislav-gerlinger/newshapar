@@ -6,12 +6,10 @@
 @section('body')
 	<section>
 		<div class="container">
-			@include('components.breadcrumbs')
-		</div>
-	</section>
-	<section>
-		<div class="container">
-			<h1>Все страницы</h1>
+			<h1>Все товары</h1>
+			<product-edit-index
+				v-bind:initial_products="{{ $products }}"
+			></product-edit-index>
 		</div>
 	</section>
 @endsection

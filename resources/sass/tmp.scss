@@ -9,3 +9,22 @@ main {
         margin-right: 15px;
     }
 }
+.edit-list {
+    display: table;
+    
+    & > div {
+        display: table-row;
+
+        & > div {
+            display: table-cell;
+            padding: 10px;
+            border: 1px solid lightgray;
+        }
+    }
+    &__header {
+        border: 0;
+    }
+    &__item {
+        border: 0;
+    }
+}

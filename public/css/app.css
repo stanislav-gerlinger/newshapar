@@ -231,3 +231,25 @@ main {
   margin-right: 15px;
 }
 
+.edit-list {
+  display: table;
+}
+
+.edit-list > div {
+  display: table-row;
+}
+
+.edit-list > div > div {
+  display: table-cell;
+  padding: 10px;
+  border: 1px solid lightgray;
+}
+
+.edit-list__header {
+  border: 0;
+}
+
+.edit-list__item {
+  border: 0;
+}
+

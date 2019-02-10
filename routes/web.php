@@ -31,6 +31,7 @@ Route::any('profile', function () {
 });
 Route::resource('profile/posts', 'Profile\PostEditController');
 Route::resource('profile/products', 'Profile\ProductEditController');
+Route::delete('profile/products/delete/{id}', 'Profile\ProductEditController@destroy');
 Route::resource('profile/yarn', 'Profile\YarnEditController');
 Route::resource('profile/pages', 'Profile\PageEditController');
 Route::resource('profile/dictionaries', 'Profile\DictionaryEditController');
